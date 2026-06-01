@@ -1,20 +1,80 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useParams } from "@tanstack/react-router";
 import {
   Brain, Activity, Ear, Zap, Shield, Heart, Video, Waves,
-  CheckCircle, Star, Phone, ArrowRight, Award, Users, Quote
+  CheckCircle, Star, Phone, ArrowRight, Award, Users, Quote, ChevronDown, ChevronUp
 } from "lucide-react";
 
 const REVIEWS = [
+  {
+    name: "Lorena Deluca",
+    date: "2 meses atrás",
+    rating: 5,
+    text: "Gracias por el camino recorrido por los profesionales que me pusieron de pie luego de 8 años. Elenn, mi terapista: eres una excelente profesional con experiencia me ayudaste emocional y físicamente. Llegué a tí en un momento muy difícil! PERO ME LEVANTASTE Y ME DECRETASTE QUE YO IBA A CAMINAR. SI! Y TRABAJAMOS DURO LLORE DE DOLORES CASI TODOS LOS DÍAS. MI DEPRESIÓN SE ELEVÓ A MIL POR 1000%! PERO ME LEVANTASTE Y AQUÍ ESTOY DE PIE SIN BASTONES NI 🦽♿ HOY ESTOY PREPARADA PARA LO QUE CONTINUA.. PONERME FUERTE.. MÁS AUN. GRACIAS A DIOS Y A TI. TENGO GRANDES PROBLEMAS COGNITIVOS. VAMOS DE NUEVO SIEMPRE DE LA MANO DE DIOS Y DE TU MANO Elenn hasta el final. Un día a la vez.",
+    condition: "Neurológico / Recuperação da Marcha",
+    lang: "🇪🇸",
+  },
+  {
+    name: "Marta Malave",
+    date: "10 meses atrás",
+    rating: 5,
+    text: "Terapeuta excelente! Fiz hidroterapia na Celebration com a Elle e recomendo 100%.",
+    condition: "Hidroterapia / Aquatic Therapy",
+    lang: "🇧🇷",
+  },
   {
     name: "Chrissie Johnson",
     date: "4 months ago",
     rating: 5,
     text: "Worked with Ellen T to help me eliminate my vertigo symptoms. She was amazing! Very knowledgeable & answered all my questions & explained very clearly what we would be doing and why! Ellen is definitely a great asset to your staff! Totally recommend her if you are fighting vertigo. Thank you Ellen for helping me 🥰",
     condition: "Vestibular / Vertigo",
+    lang: "🇺🇸",
   },
 ];
+
+const PREVIEW_LENGTH = 220;
+
+function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = review.text.length > PREVIEW_LENGTH;
+  const displayed = expanded || !isLong ? review.text : review.text.slice(0, PREVIEW_LENGTH) + "…";
+
+  return (
+    <div className="flex flex-col bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
+      <div className="flex items-start justify-between mb-3">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-[var(--color-teal)] flex items-center justify-center text-white font-bold text-sm shrink-0">
+            {review.name.charAt(0)}
+          </div>
+          <div>
+            <p className="font-bold text-white text-sm leading-tight">{review.name}</p>
+            <p className="text-white/40 text-xs mt-0.5">{review.lang} {review.date}</p>
+          </div>
+        </div>
+        <div className="flex gap-0.5 shrink-0">
+          {[...Array(review.rating)].map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 fill-[var(--color-gold)] text-[var(--color-gold)]" />
+          ))}
+        </div>
+      </div>
+      <Quote className="w-4 h-4 text-[var(--color-teal-light)] mb-2 opacity-50" />
+      <p className="text-white/80 text-sm leading-relaxed flex-1">{displayed}</p>
+      {isLong && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="flex items-center gap-1 mt-2 text-[var(--color-teal-light)] text-xs font-semibold hover:text-white transition-colors self-start"
+        >
+          {expanded ? <><ChevronUp className="w-3.5 h-3.5" /> Ver menos</> : <><ChevronDown className="w-3.5 h-3.5" /> Ver mais</>}
+        </button>
+      )}
+      <span className="inline-block mt-4 text-xs bg-[var(--color-teal)]/20 text-[var(--color-teal-light)] px-2 py-0.5 rounded-full self-start">
+        {review.condition}
+      </span>
+    </div>
+  );
+}
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -330,31 +390,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6">
             {REVIEWS.map((review) => (
-              <div key={review.name} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[var(--color-teal)] flex items-center justify-center text-white font-bold text-sm">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-bold text-white text-sm">{review.name}</p>
-                      <p className="text-white/40 text-xs">{review.date}</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-0.5">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[var(--color-gold)] text-[var(--color-gold)]" />
-                    ))}
-                  </div>
-                </div>
-                <Quote className="w-5 h-5 text-[var(--color-teal-light)] mb-2 opacity-60" />
-                <p className="text-white/80 text-sm leading-relaxed">{review.text}</p>
-                <span className="inline-block mt-3 text-xs bg-[var(--color-teal)]/20 text-[var(--color-teal-light)] px-2 py-0.5 rounded-full">
-                  {review.condition}
-                </span>
-              </div>
+              <ReviewCard key={review.name} review={review} />
             ))}
           </div>
         </div>
