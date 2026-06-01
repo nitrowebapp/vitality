@@ -88,7 +88,7 @@ export default function Footer({ locale }: FooterProps) {
             <img
               src="/powered-by-nitroweb.png"
               alt="Powered by Nitroweb"
-              className="h-[70px] w-auto"
+              className="h-[210px] w-auto"
             />
           </a>
         </div>
