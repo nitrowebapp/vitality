@@ -84,16 +84,15 @@ export default function Footer({ locale }: FooterProps) {
             href="https://nitroweb.us"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 border border-white/20 rounded-xl px-4 py-2"
+            className="flex items-center gap-1 border border-white/25 rounded-lg px-2 py-1"
           >
-            <span className="text-white/60 text-xs tracking-wide whitespace-nowrap">
+            <span className="text-white/60 text-xs whitespace-nowrap pl-1">
               Powered by
             </span>
             <img
               src="/nitroweb-logo.png"
               alt="Nitroweb"
               className="h-40 w-auto"
-              style={{ filter: "invert(1) hue-rotate(180deg) saturate(1.5)", mixBlendMode: "screen" }}
             />
           </a>
         </div>
