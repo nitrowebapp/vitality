@@ -194,5 +194,20 @@
     "rights": "Todos os direitos reservados.",
     "hipaa": "Compatível com HIPAA",
     "license": "Licença FL PT 39241"
+  },
+  "common": {
+    "years_neuro": "Anos em Reabilitação Neurológica",
+    "aquatic_title": "Hidroterapia",
+    "home_cta_title": "Pronto para Iniciar sua Recuperação?",
+    "home_cta_subtitle": "Fisioterapia neurológica certificada · Sessões 1:1 · Inglês, Português e Espanhol",
+    "book_service": "Agendar este serviço",
+    "services_cta_title": "Não sabe qual serviço é o certo para você?",
+    "services_cta_desc": "Agende uma ligação gratuita de 15 min — a Dra. Ellen vai te ajudar a encontrar o melhor caminho.",
+    "conditions_cta_title": "Não encontrou sua condição na lista?",
+    "conditions_cta_desc": "A Dra. Ellen avalia todas as condições neurológicas. Entre em contato e saberemos como ajudar.",
+    "about_cta_title": "Pronto para Trabalhar com a Dra. Ellen?",
+    "about_cta_desc": "Agende sua avaliação inicial ou ligue diretamente — estamos aqui para ajudar.",
+    "hipaa_note": "🔒 Compatível com HIPAA · Suas informações estão seguras e protegidas",
+    "treat_this": "Iniciar tratamento para esta condição"
   }
 }

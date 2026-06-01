@@ -68,7 +68,7 @@ export default function ServicesPage() {
                       to={`/${locale}/contact`}
                       className="inline-flex items-center gap-2 mt-4 text-[var(--color-teal)] font-semibold text-sm hover:text-[var(--color-navy)] transition-colors"
                     >
-                      Book this service <ArrowRight className="w-4 h-4" />
+                      {t("common.book_service")} <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
@@ -82,10 +82,10 @@ export default function ServicesPage() {
       <section className="py-14 bg-[var(--color-muted)]">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-black text-[var(--color-navy)] mb-3">
-            Not sure which service is right for you?
+            {t("common.services_cta_title")}
           </h2>
           <p className="text-muted-foreground mb-6 text-sm">
-            Book a free 15-minute discovery call — Dr. Ellen will help you find the right path.
+            {t("common.services_cta_desc")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

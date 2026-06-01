@@ -66,7 +66,7 @@ export default function ConditionsPage() {
                   to={`/${locale}/contact`}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-teal)] hover:text-[var(--color-navy)] transition-colors"
                 >
-                  Get treatment for this condition
+                  {t("common.treat_this")}
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -78,9 +78,9 @@ export default function ConditionsPage() {
       {/* CTA */}
       <section className="py-14 bg-gradient-to-br from-[var(--color-navy)] to-[#1e4a82] text-white">
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-black mb-3">Don't see your condition listed?</h2>
+          <h2 className="text-2xl font-black mb-3">{t("common.conditions_cta_title")}</h2>
           <p className="text-white/70 mb-6 text-sm">
-            Dr. Ellen evaluates all neurological conditions. Contact us and we'll let you know how we can help.
+            {t("common.conditions_cta_desc")}
           </p>
           <Link
             to={`/${locale}/contact`}

@@ -194,5 +194,20 @@
     "rights": "Todos los derechos reservados.",
     "hipaa": "Compatible con HIPAA",
     "license": "Licencia FL PT 39241"
+  },
+  "common": {
+    "years_neuro": "Años en Rehabilitación Neurológica",
+    "aquatic_title": "Terapia Acuática",
+    "home_cta_title": "¿Listo para Comenzar su Recuperación?",
+    "home_cta_subtitle": "Fisioterapia neurológica certificada · Sesiones 1:1 · Inglés, Portugués y Español",
+    "book_service": "Reservar este servicio",
+    "services_cta_title": "¿No sabe qué servicio es el adecuado para usted?",
+    "services_cta_desc": "Reserve una llamada gratuita de 15 min — la Dra. Ellen le ayudará a encontrar el camino correcto.",
+    "conditions_cta_title": "¿No ve su condición en la lista?",
+    "conditions_cta_desc": "La Dra. Ellen evalúa todas las condiciones neurológicas. Contáctenos y le diremos cómo podemos ayudar.",
+    "about_cta_title": "¿Listo para Trabajar con la Dra. Ellen?",
+    "about_cta_desc": "Reserve su evaluación inicial o llámenos directamente — estamos aquí para ayudar.",
+    "hipaa_note": "🔒 Compatible con HIPAA · Su información está segura y protegida",
+    "treat_this": "Iniciar tratamiento para esta condición"
   }
 }

@@ -174,7 +174,7 @@ export default function ContactPage() {
                   </button>
 
                   <p className="text-xs text-center text-muted-foreground">
-                    🔒 HIPAA-compliant · Your information is secure and private
+                    {t("common.hipaa_note")}
                   </p>
                 </form>
               )}

@@ -3,8 +3,18 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "@tanstack/react-router";
 import {
   Brain, Activity, Ear, Zap, Shield, Heart, Video, Waves,
-  CheckCircle, Star, Phone, ArrowRight, Award, Users, Clock
+  CheckCircle, Star, Phone, ArrowRight, Award, Users, Quote
 } from "lucide-react";
+
+const REVIEWS = [
+  {
+    name: "Chrissie Johnson",
+    date: "4 months ago",
+    rating: 5,
+    text: "Worked with Ellen T to help me eliminate my vertigo symptoms. She was amazing! Very knowledgeable & answered all my questions & explained very clearly what we would be doing and why! Ellen is definitely a great asset to your staff! Totally recommend her if you are fighting vertigo. Thank you Ellen for helping me 🥰",
+    condition: "Vestibular / Vertigo",
+  },
+];
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -163,7 +173,7 @@ export default function HomePage() {
               </div>
               <div className="absolute -bottom-4 -left-4 bg-[var(--color-navy)] text-white p-4 rounded-xl shadow-lg max-w-[200px]">
                 <div className="text-2xl font-black text-[var(--color-teal-light)]">20+</div>
-                <div className="text-xs text-white/80 leading-tight">Years in Neurological Rehabilitation</div>
+                <div className="text-xs text-white/80 leading-tight">{t("common.years_neuro")}</div>
               </div>
             </div>
 
@@ -277,7 +287,7 @@ export default function HomePage() {
                 {t("services_preview.badge")}
               </span>
               <h2 className="text-3xl lg:text-4xl font-black text-[var(--color-navy)] mt-2 mb-4">
-                Aquatic Therapy
+                {t("common.aquatic_title")}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {t("services.aquatic_desc")}
@@ -298,6 +308,54 @@ export default function HomePage() {
                 className="w-full h-80 object-cover"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="py-20 bg-[var(--color-navy)]">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-teal-light)]">
+              {t("testimonials.badge")}
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-black text-white mt-2">
+              {t("testimonials.title")}
+            </h2>
+            <div className="flex items-center justify-center gap-1 mt-3">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-[var(--color-gold)] text-[var(--color-gold)]" />
+              ))}
+              <span className="text-white/60 text-sm ml-2">Google Reviews</span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-3xl mx-auto">
+            {REVIEWS.map((review) => (
+              <div key={review.name} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[var(--color-teal)] flex items-center justify-center text-white font-bold text-sm">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-white text-sm">{review.name}</p>
+                      <p className="text-white/40 text-xs">{review.date}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[var(--color-gold)] text-[var(--color-gold)]" />
+                    ))}
+                  </div>
+                </div>
+                <Quote className="w-5 h-5 text-[var(--color-teal-light)] mb-2 opacity-60" />
+                <p className="text-white/80 text-sm leading-relaxed">{review.text}</p>
+                <span className="inline-block mt-3 text-xs bg-[var(--color-teal)]/20 text-[var(--color-teal-light)] px-2 py-0.5 rounded-full">
+                  {review.condition}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -344,10 +402,10 @@ export default function HomePage() {
             ))}
           </div>
           <h2 className="text-2xl lg:text-3xl font-black text-[var(--color-navy)] mb-3">
-            Ready to Start Your Recovery?
+            {t("common.home_cta_title")}
           </h2>
           <p className="text-[var(--color-navy)]/70 mb-6 text-sm">
-            Board-certified neurological PT · 1:1 sessions · English, Portuguese & Spanish
+            {t("common.home_cta_subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

@@ -157,10 +157,10 @@ export default function AboutPage() {
       <section className="py-14 bg-[var(--color-muted)]">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-black text-[var(--color-navy)] mb-3">
-            Ready to Work with Dr. Ellen?
+            {t("common.about_cta_title")}
           </h2>
           <p className="text-muted-foreground mb-6 text-sm">
-            Book your initial evaluation or call us directly — we're here to help.
+            {t("common.about_cta_desc")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

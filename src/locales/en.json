@@ -194,5 +194,20 @@
     "rights": "All rights reserved.",
     "hipaa": "HIPAA Compliant",
     "license": "FL License PT 39241"
+  },
+  "common": {
+    "years_neuro": "Years in Neurological Rehabilitation",
+    "aquatic_title": "Aquatic Therapy",
+    "home_cta_title": "Ready to Start Your Recovery?",
+    "home_cta_subtitle": "Board-certified neurological PT · 1:1 sessions · English, Portuguese & Spanish",
+    "book_service": "Book this service",
+    "services_cta_title": "Not sure which service is right for you?",
+    "services_cta_desc": "Book a free 15-min discovery call — Dr. Ellen will help you find the right path.",
+    "conditions_cta_title": "Don't see your condition listed?",
+    "conditions_cta_desc": "Dr. Ellen evaluates all neurological conditions. Contact us and we'll let you know how we can help.",
+    "about_cta_title": "Ready to Work with Dr. Ellen?",
+    "about_cta_desc": "Book your initial evaluation or call us directly — we're here to help.",
+    "hipaa_note": "🔒 HIPAA-compliant · Your information is secure and private",
+    "treat_this": "Get treatment for this condition"
   }
 }
