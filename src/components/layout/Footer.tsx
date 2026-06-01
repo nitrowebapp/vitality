@@ -84,15 +84,11 @@ export default function Footer({ locale }: FooterProps) {
             href="https://nitroweb.us"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 border border-white/25 rounded-lg px-2 py-1"
           >
-            <span className="text-white/60 text-xs whitespace-nowrap pl-1">
-              Powered by
-            </span>
             <img
-              src="/nitroweb-logo.png"
-              alt="Nitroweb"
-              className="h-40 w-auto"
+              src="/powered-by-nitroweb.png"
+              alt="Powered by Nitroweb"
+              className="h-14 w-auto"
             />
           </a>
         </div>
