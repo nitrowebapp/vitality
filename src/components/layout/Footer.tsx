@@ -89,11 +89,11 @@ export default function Footer({ locale }: FooterProps) {
             <span className="text-white/50 text-xs tracking-wide">
               Powered by
             </span>
-            <div className="bg-white rounded-xl px-3 py-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+            <div className="bg-white rounded-xl px-5 py-3 opacity-80 group-hover:opacity-100 transition-opacity">
               <img
                 src="/nitroweb-logo.png"
                 alt="Nitroweb"
-                className="h-8 w-auto"
+                className="h-40 w-auto"
               />
             </div>
           </a>
