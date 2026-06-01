@@ -93,7 +93,7 @@ export default function Footer({ locale }: FooterProps) {
               src="/nitroweb-logo.png"
               alt="Nitroweb"
               className="h-40 w-auto"
-              style={{ filter: "invert(1)", mixBlendMode: "screen" }}
+              style={{ filter: "invert(1) hue-rotate(180deg) saturate(1.5)", mixBlendMode: "screen" }}
             />
           </a>
         </div>
