@@ -195,6 +195,10 @@
     "hipaa": "Compatível com HIPAA",
     "license": "Licença FL PT 39241"
   },
+  "testimonials": {
+    "badge": "Histórias de Pacientes",
+    "title": "Resultados Reais, Vidas Realmente Transformadas"
+  },
   "common": {
     "years_neuro": "Anos em Reabilitação Neurológica",
     "aquatic_title": "Hidroterapia",

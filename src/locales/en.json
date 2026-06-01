@@ -195,6 +195,10 @@
     "hipaa": "HIPAA Compliant",
     "license": "FL License PT 39241"
   },
+  "testimonials": {
+    "badge": "Patient Stories",
+    "title": "Real Results, Real Lives Changed"
+  },
   "common": {
     "years_neuro": "Years in Neurological Rehabilitation",
     "aquatic_title": "Aquatic Therapy",
