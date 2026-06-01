@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.output/
+dist/
+
+# TanStack Router generated
+src/routeTree.gen.ts
+
+# Nitro
+node_modules/.nitro/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+node_modules

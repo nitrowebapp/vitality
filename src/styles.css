@@ -1,0 +1,97 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Vitality Neuro Rehab — Design System
+ * Navy Blue + Teal + Gold. Trust + Vitality + Hope.
+ * Inter (display) + Source Serif 4 (body).
+ */
+
+@theme inline {
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Vitality Brand Colors */
+  --color-navy: var(--navy);
+  --color-teal: var(--teal);
+  --color-gold: var(--gold);
+  --color-navy-light: var(--navy-light);
+  --color-teal-light: var(--teal-light);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Vitality brand */
+  --navy: oklch(30% 0.09 245);
+  --navy-light: oklch(40% 0.09 245);
+  --teal: oklch(65% 0.12 185);
+  --teal-light: oklch(80% 0.10 185);
+  --gold: oklch(72% 0.14 65);
+
+  /* Light theme tokens */
+  --background: oklch(99% 0.002 240);
+  --foreground: oklch(20% 0.04 245);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(20% 0.04 245);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(20% 0.04 245);
+  --primary: oklch(30% 0.09 245);       /* navy */
+  --primary-foreground: oklch(99% 0 0);
+  --secondary: oklch(65% 0.12 185);     /* teal */
+  --secondary-foreground: oklch(99% 0 0);
+  --muted: oklch(96% 0.004 240);
+  --muted-foreground: oklch(50% 0.04 245);
+  --accent: oklch(72% 0.14 65);         /* gold */
+  --accent-foreground: oklch(15% 0.04 245);
+  --destructive: oklch(55% 0.22 25);
+  --border: oklch(90% 0.008 240);
+  --input: oklch(90% 0.008 240);
+  --ring: oklch(65% 0.12 185);
+}
+
+* {
+  border-color: var(--color-border);
+  outline-color: color-mix(in oklch, var(--color-ring) 50%, transparent);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
