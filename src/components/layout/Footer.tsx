@@ -84,12 +84,15 @@ export default function Footer({ locale }: FooterProps) {
             href="https://nitroweb.us"
             target="_blank"
             rel="noopener noreferrer"
-            className="opacity-70 hover:opacity-100 transition-opacity"
+            className="flex items-center gap-2 group opacity-75 hover:opacity-100 transition-opacity"
           >
+            <span className="text-white/60 text-xs tracking-wide group-hover:text-white/80 transition-colors">
+              Powered by
+            </span>
             <img
-              src="/powered-by-nitroweb.png"
-              alt="Powered by Nitroweb"
-              className="h-8 w-auto"
+              src="/nitroweb-logo.png"
+              alt="Nitroweb"
+              className="h-10 w-auto"
               style={{ mixBlendMode: "screen" }}
             />
           </a>
