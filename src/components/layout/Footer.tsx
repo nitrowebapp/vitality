@@ -78,9 +78,24 @@ export default function Footer({ locale }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p>© {year} Vitality Neuro Rehab. {t("footer.rights")}</p>
-          <p>Ellen Teixeira, PT, DPT, NCS · FL License PT 39241</p>
+          <a
+            href="https://nitroweb.us"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 group opacity-60 hover:opacity-100 transition-opacity"
+          >
+            <span className="text-white/50 group-hover:text-white/70 transition-colors">
+              Powered by
+            </span>
+            <img
+              src="/nitroweb-logo.png"
+              alt="Nitroweb"
+              className="h-6 w-auto"
+              style={{ mixBlendMode: "screen" }}
+            />
+          </a>
         </div>
       </div>
     </footer>
