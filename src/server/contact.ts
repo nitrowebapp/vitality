@@ -38,27 +38,6 @@ function escapeHtml(value: string) {
     .replace(/"/g, "&quot;");
 }
 
-async function storeLead(data: ContactInput) {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) return;
-
-  const { createClient } = await import("@supabase/supabase-js");
-  const supabase = createClient(url, key, { auth: { persistSession: false } });
-  const { error } = await supabase.from("contact_leads").insert({
-    name: data.name,
-    email: data.email,
-    phone: data.phone || null,
-    language: data.language,
-    condition: data.condition || null,
-    insurance: data.insurance || null,
-    request_type: data.requestType,
-    message: data.message || null,
-    page_locale: data.pageLocale,
-  });
-  if (error) throw new Error(`Supabase insert failed: ${error.message}`);
-}
-
 async function emailLead(data: ContactInput) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
@@ -113,7 +92,6 @@ export const submitContact = createServerFn({ method: "POST" })
     if (data.website) return { ok: true as const };
 
     try {
-      await storeLead(data);
       await emailLead(data);
     } catch (err) {
       // Log the real cause server-side; the client only gets a generic failure.
