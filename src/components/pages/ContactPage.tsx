@@ -1,15 +1,19 @@
 import { useState } from "react";
+import { useParams } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { MapPin, Phone, Mail, Clock, Globe, CheckCircle, Stethoscope } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Globe, CheckCircle, Stethoscope, AlertCircle } from "lucide-react";
+import { submitContact } from "@/server/contact";
+import { EMAIL, MAILTO, PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact-info";
 
-type FormState = "idle" | "submitting" | "success";
+type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const { locale } = useParams({ from: "/$locale/contact" });
   const [formState, setFormState] = useState<FormState>("idle");
   const [form, setForm] = useState({
-    name: "", email: "", phone: "", language: "en",
-    condition: "", insurance: "", requestType: "eval", message: "",
+    name: "", email: "", phone: "", language: locale,
+    condition: "", insurance: "", requestType: "eval", message: "", website: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -19,8 +23,20 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("submitting");
-    await new Promise((r) => setTimeout(r, 1200));
-    setFormState("success");
+    try {
+      await submitContact({
+        data: {
+          ...form,
+          language: form.language as "en" | "pt" | "es",
+          requestType: form.requestType as "eval" | "discovery" | "telehealth" | "question",
+          pageLocale: locale as "en" | "pt" | "es",
+        },
+      });
+      setFormState("success");
+    } catch (err) {
+      console.error("Contact form submission failed", err);
+      setFormState("error");
+    }
   };
 
   return (
@@ -49,7 +65,21 @@ export default function ContactPage() {
                   <p className="text-muted-foreground">{t("contact.success_desc")}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5 relative">
+                  {formState === "error" && (
+                    <div role="alert" className="flex items-start gap-3 border border-red-200 bg-red-50 text-red-800 rounded-xl px-4 py-3 text-sm">
+                      <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold">{t("contact.error_title")}</p>
+                        <p>{t("contact.error_desc")}</p>
+                      </div>
+                    </div>
+                  )}
+                  {/* Honeypot: hidden from humans, filled by bots */}
+                  <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input id="website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={handleChange} />
+                  </div>
                   {/* Request type */}
                   <div>
                     <label className="block text-sm font-semibold text-[var(--color-navy)] mb-2">
@@ -87,20 +117,20 @@ export default function ContactPage() {
                   {/* Name + Email */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                      <label htmlFor="name" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                         {t("contact.name")} *
                       </label>
                       <input
-                        name="name" required value={form.name} onChange={handleChange}
+                        id="name" name="name" required value={form.name} onChange={handleChange}
                         className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] focus:ring-1 focus:ring-[var(--color-teal)]/30 transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                      <label htmlFor="email" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                         {t("contact.email")} *
                       </label>
                       <input
-                        type="email" name="email" required value={form.email} onChange={handleChange}
+                        id="email" type="email" name="email" required value={form.email} onChange={handleChange}
                         className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] focus:ring-1 focus:ring-[var(--color-teal)]/30 transition-all"
                       />
                     </div>
@@ -109,20 +139,20 @@ export default function ContactPage() {
                   {/* Phone + Language */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                      <label htmlFor="phone" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                         {t("contact.phone")}
                       </label>
                       <input
-                        type="tel" name="phone" value={form.phone} onChange={handleChange}
+                        id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange}
                         className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] focus:ring-1 focus:ring-[var(--color-teal)]/30 transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                      <label htmlFor="language" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                         {t("contact.lang_pref")}
                       </label>
                       <select
-                        name="language" value={form.language} onChange={handleChange}
+                        id="language" name="language" value={form.language} onChange={handleChange}
                         className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] transition-all bg-white"
                       >
                         <option value="en">{t("contact.lang_en")}</option>
@@ -135,20 +165,20 @@ export default function ContactPage() {
                   {/* Condition + Insurance */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                      <label htmlFor="condition" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                         {t("contact.condition")}
                       </label>
                       <input
-                        name="condition" placeholder={t("contact.condition_ph")} value={form.condition} onChange={handleChange}
+                        id="condition" name="condition" placeholder={t("contact.condition_ph")} value={form.condition} onChange={handleChange}
                         className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] focus:ring-1 focus:ring-[var(--color-teal)]/30 transition-all placeholder:text-muted-foreground"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                      <label htmlFor="insurance" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                         {t("contact.insurance")}
                       </label>
                       <input
-                        name="insurance" placeholder={t("contact.insurance_ph")} value={form.insurance} onChange={handleChange}
+                        id="insurance" name="insurance" placeholder={t("contact.insurance_ph")} value={form.insurance} onChange={handleChange}
                         className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] focus:ring-1 focus:ring-[var(--color-teal)]/30 transition-all placeholder:text-muted-foreground"
                       />
                     </div>
@@ -156,11 +186,11 @@ export default function ContactPage() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
+                    <label htmlFor="message" className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">
                       {t("contact.message")}
                     </label>
                     <textarea
-                      name="message" rows={4} value={form.message} onChange={handleChange}
+                      id="message" name="message" rows={4} value={form.message} onChange={handleChange}
                       className="w-full border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[var(--color-teal)] focus:ring-1 focus:ring-[var(--color-teal)]/30 transition-all resize-none"
                     />
                   </div>
@@ -194,13 +224,13 @@ export default function ContactPage() {
                     <p className="text-white/60 text-sm">{t("contact.area")}</p>
                   </div>
                 </div>
-                <a href="tel:+16892697762" className="flex items-center gap-3 hover:text-[var(--color-teal-light)] transition-colors">
+                <a href={PHONE_TEL} className="flex items-center gap-3 hover:text-[var(--color-teal-light)] transition-colors">
                   <Phone className="w-5 h-5 text-[var(--color-teal-light)] shrink-0" />
-                  <span className="font-semibold">(689) 269-7762</span>
+                  <span className="font-semibold">{PHONE_DISPLAY}</span>
                 </a>
-                <a href="mailto:ellencsteixeira@gmail.com" className="flex items-start gap-3 hover:text-[var(--color-teal-light)] transition-colors">
+                <a href={MAILTO} className="flex items-start gap-3 hover:text-[var(--color-teal-light)] transition-colors">
                   <Mail className="w-5 h-5 text-[var(--color-teal-light)] shrink-0 mt-0.5" />
-                  <span className="text-sm break-all">ellencsteixeira@gmail.com</span>
+                  <span className="text-sm break-all">{EMAIL}</span>
                 </a>
                 <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-[var(--color-teal-light)] shrink-0 mt-0.5" />
@@ -225,7 +255,7 @@ export default function ContactPage() {
                   {t("contact.referring_desc")}
                 </p>
                 <a
-                  href="mailto:ellencsteixeira@gmail.com?subject=Patient Referral"
+                  href={`${MAILTO}?subject=${encodeURIComponent(t("contact.referral_subject"))}`}
                   className="inline-flex items-center gap-2 bg-[var(--color-teal)]/10 text-[var(--color-teal)] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[var(--color-teal)] hover:text-white transition-all"
                 >
                   {t("contact.referring_cta")}
@@ -234,7 +264,7 @@ export default function ContactPage() {
 
               {/* Aquatic therapy image */}
               <div className="rounded-2xl overflow-hidden shadow-md">
-                <img src="/ellen-headshot.jpg" alt="Dr. Ellen Teixeira" className="w-full h-48 object-cover object-top" />
+                <img src="/ellen-headshot.jpg" alt={t("common.alt_ellen")} width={843} height={1264} loading="lazy" className="w-full h-48 object-cover object-top" />
               </div>
             </div>
           </div>

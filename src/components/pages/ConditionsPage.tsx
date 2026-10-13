@@ -63,7 +63,7 @@ export default function ConditionsPage() {
                   {t(`conditions.${key}_desc`)}
                 </p>
                 <Link
-                  to={`/${locale}/contact`}
+                  to="/$locale/contact" params={{ locale }}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-teal)] hover:text-[var(--color-navy)] transition-colors"
                 >
                   {t("common.treat_this")}
@@ -83,7 +83,7 @@ export default function ConditionsPage() {
             {t("common.conditions_cta_desc")}
           </p>
           <Link
-            to={`/${locale}/contact`}
+            to="/$locale/contact" params={{ locale }}
             className="inline-flex items-center gap-2 bg-[var(--color-teal)] text-white font-bold px-8 py-4 rounded-xl hover:bg-[var(--color-teal-light)] transition-all"
           >
             {t("nav.book")} <ArrowRight className="w-4 h-4" />

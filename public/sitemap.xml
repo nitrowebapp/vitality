@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.vitalityneurorehab.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/pt/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/pt/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/es/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/en/conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/conditions"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/pt/conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/conditions"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/es/conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/conditions"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/pt/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vitalityneurorehab.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vitalityneurorehab.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.vitalityneurorehab.com/pt/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.vitalityneurorehab.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vitalityneurorehab.com/en/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

@@ -6,6 +6,7 @@ node_modules/
 dist/
 
 # TanStack Router generated
+# src/routeTree.gen.ts is generated at build time (kept out of git)
 src/routeTree.gen.ts
 
 # Nitro
@@ -32,3 +33,5 @@ Thumbs.db
 # Logs
 npm-debug.log*
 node_modules
+
+.vercel

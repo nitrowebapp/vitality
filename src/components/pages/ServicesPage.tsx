@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact-info";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useParams } from "@tanstack/react-router";
@@ -65,7 +66,7 @@ export default function ServicesPage() {
                     </h2>
                     <p className="text-muted-foreground leading-relaxed">{t(`services.${key}_desc`)}</p>
                     <Link
-                      to={`/${locale}/contact`}
+                      to="/$locale/contact" params={{ locale }}
                       className="inline-flex items-center gap-2 mt-4 text-[var(--color-teal)] font-semibold text-sm hover:text-[var(--color-navy)] transition-colors"
                     >
                       {t("common.book_service")} <ArrowRight className="w-4 h-4" />
@@ -89,16 +90,16 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              to={`/${locale}/contact`}
+              to="/$locale/contact" params={{ locale }}
               className="inline-flex items-center gap-2 bg-[var(--color-navy)] text-white font-bold px-6 py-3.5 rounded-xl hover:bg-[var(--color-teal)] transition-all"
             >
               {t("nav.book")} <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+16892697762"
+              href={PHONE_TEL}
               className="inline-flex items-center gap-2 border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-bold px-6 py-3.5 rounded-xl hover:bg-[var(--color-navy)] hover:text-white transition-all"
             >
-              <Phone className="w-4 h-4" /> (689) 269-7762
+              <Phone className="w-4 h-4" /> {PHONE_DISPLAY}
             </a>
           </div>
         </div>

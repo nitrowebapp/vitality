@@ -1,7 +1,11 @@
 {
   "nav": {
-    "home": "Início", "about": "Sobre", "services": "Serviços",
-    "conditions": "Condições", "contact": "Contato", "book": "Agendar Consulta"
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "conditions": "Condições",
+    "contact": "Contato",
+    "book": "Agendar Consulta"
   },
   "hero": {
     "badge": "Especialista em Fisioterapia Neurológica · NCS",
@@ -13,7 +17,8 @@
     "trust_years": "Anos de Experiência",
     "trust_patients": "Pacientes Atendidos",
     "trust_oneonone": "Sessões 1:1",
-    "trust_ncs": "Certificada NCS"
+    "trust_ncs": "Certificada NCS",
+    "ncs_badge": "Certificada NCS"
   },
   "about_preview": {
     "badge": "Conheça a Fundadora",
@@ -30,12 +35,30 @@
     "badge": "O Que Tratamos",
     "title": "Cuidado Neurológico Especializado",
     "subtitle": "Reabilitação baseada em evidências focada na neuroplasticidade e na restauração da sua independência.",
-    "stroke": { "title": "Recuperação de AVC", "desc": "Recupere força, coordenação e independência após um acidente vascular cerebral." },
-    "parkinsons": { "title": "Doença de Parkinson", "desc": "Terapia de movimento baseada em evidências para controlar sintomas e melhorar a função diária." },
-    "vestibular": { "title": "Reabilitação Vestibular", "desc": "Tratamento avançado com OMNIAX para VPPB, tontura crônica e PPPD." },
-    "tbi": { "title": "Lesão Cerebral / TCE", "desc": "Reabilitação personalizada para traumatismo cranioencefálico e síndrome pós-concussão." },
-    "ms": { "title": "Esclerose Múltipla", "desc": "Terapia direcionada para manter a função e controlar os sintomas da EM a longo prazo." },
-    "balance": { "title": "Equilíbrio e Prevenção de Quedas", "desc": "Avaliação com NeuroCom e treinamento para prevenir quedas e melhorar a estabilidade." },
+    "stroke": {
+      "title": "Recuperação de AVC",
+      "desc": "Recupere força, coordenação e independência após um acidente vascular cerebral."
+    },
+    "parkinsons": {
+      "title": "Doença de Parkinson",
+      "desc": "Terapia de movimento baseada em evidências para controlar sintomas e melhorar a função diária."
+    },
+    "vestibular": {
+      "title": "Reabilitação Vestibular",
+      "desc": "Tratamento avançado com OMNIAX para VPPB, tontura crônica e PPPD."
+    },
+    "tbi": {
+      "title": "Lesão Cerebral / TCE",
+      "desc": "Reabilitação personalizada para traumatismo cranioencefálico e síndrome pós-concussão."
+    },
+    "ms": {
+      "title": "Esclerose Múltipla",
+      "desc": "Terapia direcionada para manter a função e controlar os sintomas da EM a longo prazo."
+    },
+    "balance": {
+      "title": "Equilíbrio e Prevenção de Quedas",
+      "desc": "Avaliação com NeuroCom e treinamento para prevenir quedas e melhorar a estabilidade."
+    },
     "cta": "Ver Todos os Serviços"
   },
   "why": {
@@ -185,7 +208,10 @@
     "languages_note": "Atendemos em inglês, português e espanhol",
     "referring_title": "Para Médicos Referenciadores",
     "referring_desc": "Aceitamos encaminhamentos de neurologistas, otorrinolaringologistas, clínicos gerais e outros especialistas. Buscamos atender seu paciente em até 48 horas.",
-    "referring_cta": "Enviar Encaminhamento"
+    "referring_cta": "Enviar Encaminhamento",
+    "referral_subject": "Encaminhamento de Paciente",
+    "error_title": "Algo deu errado",
+    "error_desc": "Não foi possível enviar sua mensagem. Tente novamente ou ligue para (689) 269-7762."
   },
   "footer": {
     "tagline": "Reabilitação neurológica especializada para AVC, Parkinson, distúrbios vestibulares, TCE e muito mais.",
@@ -193,11 +219,18 @@
     "contact_title": "Contato",
     "rights": "Todos os direitos reservados.",
     "hipaa": "Compatível com HIPAA",
-    "license": "Licença FL PT 39241"
+    "license": "Licença FL PT 39241",
+    "area": "Região Metropolitana de Orlando"
   },
   "testimonials": {
     "badge": "Histórias de Pacientes",
-    "title": "Resultados Reais, Vidas Realmente Transformadas"
+    "title": "Resultados Reais, Vidas Realmente Transformadas",
+    "google": "Avaliações do Google",
+    "read_more": "Ver mais",
+    "read_less": "Ver menos",
+    "r1_condition": "Neurológico / Recuperação da Marcha",
+    "r2_condition": "Hidroterapia",
+    "r3_condition": "Vestibular / Vertigem"
   },
   "common": {
     "years_neuro": "Anos em Reabilitação Neurológica",
@@ -212,6 +245,35 @@
     "about_cta_title": "Pronto para Trabalhar com a Dra. Ellen?",
     "about_cta_desc": "Agende sua avaliação inicial ou ligue diretamente — estamos aqui para ajudar.",
     "hipaa_note": "🔒 Compatível com HIPAA · Suas informações estão seguras e protegidas",
-    "treat_this": "Iniciar tratamento para esta condição"
+    "treat_this": "Iniciar tratamento para esta condição",
+    "alt_ellen": "Dra. Ellen Teixeira, PT, DPT, NCS",
+    "alt_clinic": "Dra. Ellen Teixeira em sua clínica de reabilitação vestibular",
+    "alt_aquatic": "Sessão de hidroterapia na Vitality Neuro Rehab",
+    "powered_by": "Desenvolvido por Nitroweb"
+  },
+  "seo": {
+    "home": {
+      "title": "Fisioterapia Neurológica em Windermere e Orlando, FL",
+      "description": "Fisioterapia neurológica certificada (NCS) em Windermere, FL. Reabilitação de AVC, Parkinson, distúrbios vestibulares, TCE e equilíbrio, 1:1 com a Dra. Ellen Teixeira. Atendimento em português."
+    },
+    "about": {
+      "title": "Sobre a Dra. Ellen Teixeira, PT, DPT, NCS",
+      "description": "Conheça a Dra. Ellen Teixeira, fisioterapeuta brasileira certificada como Especialista Clínica Neurológica, com mais de 20 anos em reabilitação neurológica e vestibular na região de Orlando."
+    },
+    "services": {
+      "title": "Serviços: Neuro, Vestibular, Equilíbrio e Hidroterapia",
+      "description": "Fisioterapia neurológica, reabilitação vestibular com OMNIAX, treino de equilíbrio e marcha, manejo de concussão, paralisia de Bell, hidroterapia e telehealth em Windermere, FL."
+    },
+    "conditions": {
+      "title": "Condições Tratadas: AVC, Parkinson, Tontura, TCE e Mais",
+      "description": "Reabilitação especializada para AVC, Parkinson, esclerose múltipla, TCE, distúrbios vestibulares, concussão, paralisia de Bell e prevenção de quedas na região de Orlando."
+    },
+    "contact": {
+      "title": "Agende sua Avaliação ou Ligação Gratuita",
+      "description": "Fale com a Vitality Neuro Rehab em Windermere, FL. Agende sua avaliação neurológica, uma ligação gratuita de 15 minutos ou uma sessão de telehealth. Respondemos em até 24 horas."
+    }
+  },
+  "header": {
+    "serving": "Atendendo Orlando em EN · PT · ES"
   }
 }

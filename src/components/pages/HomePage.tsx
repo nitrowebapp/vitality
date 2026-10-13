@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact-info";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
@@ -10,33 +11,41 @@ import {
 const REVIEWS = [
   {
     name: "Lorena Deluca",
-    date: "2 meses atrás",
+    date: "2026-04",
     rating: 5,
     text: "Gracias por el camino recorrido por los profesionales que me pusieron de pie luego de 8 años. Elenn, mi terapista: eres una excelente profesional con experiencia me ayudaste emocional y físicamente. Llegué a tí en un momento muy difícil! PERO ME LEVANTASTE Y ME DECRETASTE QUE YO IBA A CAMINAR. SI! Y TRABAJAMOS DURO LLORE DE DOLORES CASI TODOS LOS DÍAS. MI DEPRESIÓN SE ELEVÓ A MIL POR 1000%! PERO ME LEVANTASTE Y AQUÍ ESTOY DE PIE SIN BASTONES NI 🦽♿ HOY ESTOY PREPARADA PARA LO QUE CONTINUA.. PONERME FUERTE.. MÁS AUN. GRACIAS A DIOS Y A TI. TENGO GRANDES PROBLEMAS COGNITIVOS. VAMOS DE NUEVO SIEMPRE DE LA MANO DE DIOS Y DE TU MANO Elenn hasta el final. Un día a la vez.",
-    condition: "Neurológico / Recuperação da Marcha",
+    conditionKey: "testimonials.r1_condition",
     lang: "🇪🇸",
   },
   {
     name: "Marta Malave",
-    date: "10 meses atrás",
+    date: "2025-08",
     rating: 5,
     text: "Terapeuta excelente! Fiz hidroterapia na Celebration com a Elle e recomendo 100%.",
-    condition: "Hidroterapia / Aquatic Therapy",
+    conditionKey: "testimonials.r2_condition",
     lang: "🇧🇷",
   },
   {
     name: "Chrissie Johnson",
-    date: "4 months ago",
+    date: "2026-02",
     rating: 5,
     text: "Worked with Ellen T to help me eliminate my vertigo symptoms. She was amazing! Very knowledgeable & answered all my questions & explained very clearly what we would be doing and why! Ellen is definitely a great asset to your staff! Totally recommend her if you are fighting vertigo. Thank you Ellen for helping me 🥰",
-    condition: "Vestibular / Vertigo",
+    conditionKey: "testimonials.r3_condition",
     lang: "🇺🇸",
   },
 ];
 
+const INTL_LOCALE: Record<string, string> = { en: "en-US", pt: "pt-BR", es: "es-ES" };
+
+function formatMonth(iso: string, locale: string) {
+  const [y, m] = iso.split("-").map(Number);
+  return new Intl.DateTimeFormat(INTL_LOCALE[locale] ?? "en-US", { month: "long", year: "numeric" }).format(new Date(y, m - 1, 1));
+}
+
 const PREVIEW_LENGTH = 220;
 
-function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
+function ReviewCard({ review, locale }: { review: typeof REVIEWS[number]; locale: string }) {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const isLong = review.text.length > PREVIEW_LENGTH;
   const displayed = expanded || !isLong ? review.text : review.text.slice(0, PREVIEW_LENGTH) + "…";
@@ -50,7 +59,7 @@ function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
           </div>
           <div>
             <p className="font-bold text-white text-sm leading-tight">{review.name}</p>
-            <p className="text-white/40 text-xs mt-0.5">{review.lang} {review.date}</p>
+            <p className="text-white/40 text-xs mt-0.5">{review.lang} {formatMonth(review.date, locale)}</p>
           </div>
         </div>
         <div className="flex gap-0.5 shrink-0">
@@ -66,11 +75,11 @@ function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
           onClick={() => setExpanded(!expanded)}
           className="flex items-center gap-1 mt-2 text-[var(--color-teal-light)] text-xs font-semibold hover:text-white transition-colors self-start"
         >
-          {expanded ? <><ChevronUp className="w-3.5 h-3.5" /> Ver menos</> : <><ChevronDown className="w-3.5 h-3.5" /> Ver mais</>}
+          {expanded ? <><ChevronUp className="w-3.5 h-3.5" /> {t("testimonials.read_less")}</> : <><ChevronDown className="w-3.5 h-3.5" /> {t("testimonials.read_more")}</>}
         </button>
       )}
       <span className="inline-block mt-4 text-xs bg-[var(--color-teal)]/20 text-[var(--color-teal-light)] px-2 py-0.5 rounded-full self-start">
-        {review.condition}
+        {t(review.conditionKey)}
       </span>
     </div>
   );
@@ -118,25 +127,23 @@ export default function HomePage() {
                 <Award className="w-3.5 h-3.5" />
                 {t("hero.badge")}
               </span>
-              <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-2">
+              <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-6">
                 {t("hero.title")}
-              </h1>
-              <h1 className="text-4xl lg:text-6xl font-black leading-tight text-[var(--color-teal-light)] mb-6">
-                {t("hero.title2")}
+                <span className="block text-[var(--color-teal-light)]">{t("hero.title2")}</span>
               </h1>
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
                 {t("hero.subtitle")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  to={`/${locale}/contact`}
+                  to="/$locale/contact" params={{ locale }}
                   className="inline-flex items-center justify-center gap-2 bg-[var(--color-teal)] hover:bg-[var(--color-teal-light)] text-white font-bold px-6 py-3.5 rounded-xl transition-all hover:scale-105 shadow-lg shadow-teal-900/30"
                 >
                   {t("hero.cta_book")}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="tel:+16892697762"
+                  href={PHONE_TEL}
                   className="inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-xl transition-all"
                 >
                   <Phone className="w-4 h-4" />
@@ -151,12 +158,15 @@ export default function HomePage() {
                 <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-[var(--color-teal)]/30">
                   <img
                     src="/ellen-headshot.jpg"
-                    alt="Dr. Ellen Teixeira, PT, DPT, NCS"
+                    alt={t("common.alt_ellen")}
+                    width={843}
+                    height={1264}
+                    fetchPriority="high"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-[var(--color-gold)] text-[var(--color-navy)] font-black text-sm px-3 py-2 rounded-xl shadow-lg">
-                  NCS Certified
+                  {t("hero.ncs_badge")}
                 </div>
               </div>
 
@@ -209,7 +219,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Link
-              to={`/${locale}/services`}
+              to="/$locale/services" params={{ locale }}
               className="inline-flex items-center gap-2 border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-bold px-6 py-3 rounded-xl hover:bg-[var(--color-navy)] hover:text-white transition-all"
             >
               {t("services_preview.cta")}
@@ -227,7 +237,10 @@ export default function HomePage() {
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="/ellen-clinic.jpg"
-                  alt="Dr. Ellen Teixeira in her vestibular rehabilitation clinic"
+                  alt={t("common.alt_clinic")}
+                  width={1056}
+                  height={992}
+                  loading="lazy"
                   className="w-full h-[480px] object-cover"
                 />
               </div>
@@ -259,7 +272,7 @@ export default function HomePage() {
               </div>
 
               <Link
-                to={`/${locale}/about`}
+                to="/$locale/about" params={{ locale }}
                 className="inline-flex items-center gap-2 bg-[var(--color-navy)] text-white font-bold px-6 py-3 rounded-xl hover:bg-[var(--color-teal)] transition-all"
               >
                 {t("about_preview.cta")}
@@ -328,7 +341,7 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <Link
-              to={`/${locale}/contact`}
+              to="/$locale/contact" params={{ locale }}
               className="inline-flex items-center gap-2 bg-[var(--color-teal)] hover:bg-[var(--color-teal-light)] text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
             >
               {t("hero.cta_book")}
@@ -354,7 +367,7 @@ export default function HomePage() {
               </p>
               <div className="flex gap-3">
                 <Link
-                  to={`/${locale}/services`}
+                  to="/$locale/services" params={{ locale }}
                   className="inline-flex items-center gap-2 bg-[var(--color-navy)] text-white font-bold px-5 py-2.5 rounded-xl hover:bg-[var(--color-teal)] transition-all text-sm"
                 >
                   {t("services_preview.cta")}
@@ -364,7 +377,10 @@ export default function HomePage() {
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="/aquatic-therapy.jpg"
-                alt="Aquatic therapy session at Vitality Neuro Rehab"
+                alt={t("common.alt_aquatic")}
+                width={1125}
+                height={1370}
+                loading="lazy"
                 className="w-full h-80 object-cover"
               />
             </div>
@@ -386,13 +402,13 @@ export default function HomePage() {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-[var(--color-gold)] text-[var(--color-gold)]" />
               ))}
-              <span className="text-white/60 text-sm ml-2">Google Reviews</span>
+              <span className="text-white/60 text-sm ml-2">{t("testimonials.google")}</span>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {REVIEWS.map((review) => (
-              <ReviewCard key={review.name} review={review} />
+              <ReviewCard key={review.name} review={review} locale={locale} />
             ))}
           </div>
         </div>
@@ -420,7 +436,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to={`/${locale}/contact`}
+              to="/$locale/contact" params={{ locale }}
               className="inline-flex items-center gap-2 bg-[var(--color-teal)] text-white font-bold px-6 py-3 rounded-xl hover:bg-[var(--color-navy)] transition-all"
             >
               {t("insurance.cta")}
@@ -447,18 +463,18 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              to={`/${locale}/contact`}
+              to="/$locale/contact" params={{ locale }}
               className="inline-flex items-center justify-center gap-2 bg-[var(--color-navy)] text-white font-bold px-8 py-4 rounded-xl hover:bg-[var(--color-teal)] transition-all shadow-lg"
             >
               {t("hero.cta_book")}
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+16892697762"
+              href={PHONE_TEL}
               className="inline-flex items-center justify-center gap-2 border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-bold px-8 py-4 rounded-xl hover:bg-[var(--color-navy)] hover:text-white transition-all"
             >
               <Phone className="w-4 h-4" />
-              (689) 269-7762
+              {PHONE_DISPLAY}
             </a>
           </div>
         </div>

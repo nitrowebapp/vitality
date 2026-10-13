@@ -1,7 +1,11 @@
 {
   "nav": {
-    "home": "Home", "about": "About", "services": "Services",
-    "conditions": "Conditions", "contact": "Contact", "book": "Book Appointment"
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "conditions": "Conditions",
+    "contact": "Contact",
+    "book": "Book Appointment"
   },
   "hero": {
     "badge": "Board-Certified Neurologic Specialist · NCS",
@@ -13,7 +17,8 @@
     "trust_years": "Years Experience",
     "trust_patients": "Patients Helped",
     "trust_oneonone": "1:1 Sessions",
-    "trust_ncs": "NCS Certified"
+    "trust_ncs": "NCS Certified",
+    "ncs_badge": "NCS Certified"
   },
   "about_preview": {
     "badge": "Meet the Founder",
@@ -30,12 +35,30 @@
     "badge": "What We Treat",
     "title": "Specialized Neurological Care",
     "subtitle": "Evidence-based rehabilitation focused on neuroplasticity and restoring your independence.",
-    "stroke": { "title": "Stroke Recovery", "desc": "Regain strength, coordination and independence after a stroke." },
-    "parkinsons": { "title": "Parkinson's Disease", "desc": "Evidence-based movement therapy to manage symptoms and improve daily function." },
-    "vestibular": { "title": "Vestibular Rehabilitation", "desc": "Advanced OMNIAX-assisted treatment for BPPV, chronic dizziness, and PPPD." },
-    "tbi": { "title": "Brain Injury / TBI", "desc": "Personalized rehabilitation for traumatic brain injury and concussion syndrome." },
-    "ms": { "title": "Multiple Sclerosis", "desc": "Targeted therapy to maintain function and manage MS symptoms long-term." },
-    "balance": { "title": "Balance & Fall Prevention", "desc": "NeuroCom-assisted assessment and training to prevent falls and improve stability." },
+    "stroke": {
+      "title": "Stroke Recovery",
+      "desc": "Regain strength, coordination and independence after a stroke."
+    },
+    "parkinsons": {
+      "title": "Parkinson's Disease",
+      "desc": "Evidence-based movement therapy to manage symptoms and improve daily function."
+    },
+    "vestibular": {
+      "title": "Vestibular Rehabilitation",
+      "desc": "Advanced OMNIAX-assisted treatment for BPPV, chronic dizziness, and PPPD."
+    },
+    "tbi": {
+      "title": "Brain Injury / TBI",
+      "desc": "Personalized rehabilitation for traumatic brain injury and concussion syndrome."
+    },
+    "ms": {
+      "title": "Multiple Sclerosis",
+      "desc": "Targeted therapy to maintain function and manage MS symptoms long-term."
+    },
+    "balance": {
+      "title": "Balance & Fall Prevention",
+      "desc": "NeuroCom-assisted assessment and training to prevent falls and improve stability."
+    },
     "cta": "View All Services"
   },
   "why": {
@@ -185,7 +208,10 @@
     "languages_note": "We speak English, Portuguese & Spanish",
     "referring_title": "For Referring Providers",
     "referring_desc": "We accept referrals from neurologists, ENT physicians, primary care, and other specialists. We aim to see your patient within 48 hours.",
-    "referring_cta": "Send a Referral"
+    "referring_cta": "Send a Referral",
+    "referral_subject": "Patient Referral",
+    "error_title": "Something went wrong",
+    "error_desc": "We couldn't send your message. Please try again or call us at (689) 269-7762."
   },
   "footer": {
     "tagline": "Specialized neurological rehabilitation for stroke, Parkinson's, vestibular disorders, TBI, and more.",
@@ -193,11 +219,18 @@
     "contact_title": "Contact",
     "rights": "All rights reserved.",
     "hipaa": "HIPAA Compliant",
-    "license": "FL License PT 39241"
+    "license": "FL License PT 39241",
+    "area": "Greater Orlando Area"
   },
   "testimonials": {
     "badge": "Patient Stories",
-    "title": "Real Results, Real Lives Changed"
+    "title": "Real Results, Real Lives Changed",
+    "google": "Google Reviews",
+    "read_more": "Read more",
+    "read_less": "Read less",
+    "r1_condition": "Neurological / Gait Recovery",
+    "r2_condition": "Aquatic Therapy",
+    "r3_condition": "Vestibular / Vertigo"
   },
   "common": {
     "years_neuro": "Years in Neurological Rehabilitation",
@@ -212,6 +245,35 @@
     "about_cta_title": "Ready to Work with Dr. Ellen?",
     "about_cta_desc": "Book your initial evaluation or call us directly — we're here to help.",
     "hipaa_note": "🔒 HIPAA-compliant · Your information is secure and private",
-    "treat_this": "Get treatment for this condition"
+    "treat_this": "Get treatment for this condition",
+    "alt_ellen": "Dr. Ellen Teixeira, PT, DPT, NCS",
+    "alt_clinic": "Dr. Ellen Teixeira in her vestibular rehabilitation clinic",
+    "alt_aquatic": "Aquatic therapy session at Vitality Neuro Rehab",
+    "powered_by": "Powered by Nitroweb"
+  },
+  "seo": {
+    "home": {
+      "title": "Neurological Physical Therapy in Windermere & Orlando, FL",
+      "description": "Board-certified neurologic physical therapy (NCS) in Windermere, FL. Stroke, Parkinson's, vestibular disorders, TBI and balance rehab, 1:1 with Dr. Ellen Teixeira. English, Portuguese & Spanish."
+    },
+    "about": {
+      "title": "About Dr. Ellen Teixeira, PT, DPT, NCS",
+      "description": "Meet Dr. Ellen Teixeira, board-certified Neurologic Clinical Specialist with 20+ years in neurological and vestibular rehabilitation, serving Greater Orlando in three languages."
+    },
+    "services": {
+      "title": "Neuro, Vestibular, Balance & Aquatic Therapy Services",
+      "description": "Neurological PT, vestibular rehabilitation with OMNIAX, balance and gait training, concussion management, Bell's palsy, aquatic therapy and telehealth in Windermere, FL."
+    },
+    "conditions": {
+      "title": "Conditions We Treat: Stroke, Parkinson's, Vertigo, TBI & More",
+      "description": "Specialized rehabilitation for stroke, Parkinson's disease, multiple sclerosis, TBI, vestibular disorders, concussion, Bell's palsy and fall prevention in the Orlando area."
+    },
+    "contact": {
+      "title": "Book an Evaluation or Free Discovery Call",
+      "description": "Contact Vitality Neuro Rehab in Windermere, FL. Schedule your neurological evaluation, a free 15-minute discovery call or a telehealth session. We reply within 24 hours."
+    }
+  },
+  "header": {
+    "serving": "Serving Orlando in EN · PT · ES"
   }
 }

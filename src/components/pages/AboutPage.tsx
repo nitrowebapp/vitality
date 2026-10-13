@@ -1,3 +1,4 @@
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact-info";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useParams } from "@tanstack/react-router";
@@ -45,7 +46,9 @@ export default function AboutPage() {
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="/ellen-headshot.jpg"
-                  alt="Dr. Ellen Teixeira, PT, DPT, NCS"
+                  alt={t("common.alt_ellen")}
+                  width={843}
+                  height={1264}
                   className="w-full object-cover"
                 />
               </div>
@@ -84,7 +87,7 @@ export default function AboutPage() {
               </div>
 
               <Link
-                to={`/${locale}/contact`}
+                to="/$locale/contact" params={{ locale }}
                 className="flex items-center justify-center gap-2 bg-[var(--color-teal)] text-white font-bold px-6 py-3.5 rounded-xl hover:bg-[var(--color-navy)] transition-all w-full"
               >
                 {t("nav.book")}
@@ -164,18 +167,18 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              to={`/${locale}/contact`}
+              to="/$locale/contact" params={{ locale }}
               className="inline-flex items-center gap-2 bg-[var(--color-navy)] text-white font-bold px-6 py-3.5 rounded-xl hover:bg-[var(--color-teal)] transition-all"
             >
               {t("nav.book")}
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+16892697762"
+              href={PHONE_TEL}
               className="inline-flex items-center gap-2 border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-bold px-6 py-3.5 rounded-xl hover:bg-[var(--color-navy)] hover:text-white transition-all"
             >
               <Phone className="w-4 h-4" />
-              (689) 269-7762
+              {PHONE_DISPLAY}
             </a>
           </div>
         </div>
